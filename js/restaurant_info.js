@@ -29,6 +29,12 @@ initMap = () => {
           'Imagery © <a href="https://www.mapbox.com/" tabindex="-1">Mapbox</a>',
         id: 'mapbox.streets'    
       }).addTo(newMap);
+      let selectLeaf = document.getElementsByClassName('leaflet-control-attribution');
+      if(selectLeaf.length > 0){
+        let linkElement = selectLeaf[0].firstChild;
+        if(typeof linkElement != 'undefined')
+          linkElement.tabIndex = -1;
+      }
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
     }
@@ -81,16 +87,20 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
+  name.setAttribute("aria-label", "Restaurant name; " + restaurant.name);
   name.innerHTML = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
+  address.setAttribute("aria-label", "Address; " + restaurant.address);
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
+  image.setAttribute("aria-label", "Photo of the restaurant " + restaurant.name);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
+  cuisine.setAttribute("aria-label", "Kind of food " + restaurant.cuisine_type);
   cuisine.innerHTML = restaurant.cuisine_type;
 
   // fill operating hours
@@ -151,6 +161,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   li.tabIndex = 1;
+  li.setAttribute("aria-label", `Review by ${review.name} on ${review.date} with a rate of ${review.rating}. ${review.comments}`);
   const name = document.createElement('p');
   name.innerHTML = review.name;
   li.appendChild(name);
