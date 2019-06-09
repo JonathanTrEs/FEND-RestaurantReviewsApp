@@ -128,7 +128,12 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
-
+.filter-options select:focus,
+a:focus,
+img:focus  {
+    outline: none;
+    border:1px solid red;
+}
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
