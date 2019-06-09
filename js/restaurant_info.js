@@ -161,6 +161,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   li.tabIndex = 1;
+  li.setAttribute("role","listitem");
   li.setAttribute("aria-label", `Review by ${review.name} on ${review.date} with a rate of ${review.rating}. ${review.comments}`);
   const name = document.createElement('p');
   name.innerHTML = review.name;
