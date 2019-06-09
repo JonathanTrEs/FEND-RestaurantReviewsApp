@@ -157,6 +157,8 @@ nav h1 a {
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
+  object-fit: cover;
+  object-position: 100% 10%;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -311,8 +313,7 @@ nav h1 a {
   .information {
     width: 100%;
   }
-  #breadcrumb {
-    margin-top: 700px;
+  .inside #breadcrumb {
     width: 100%;
   }
 }
