@@ -85,6 +85,12 @@ initMap = () => {
       'Imagery © <a href="https://www.mapbox.com/" tabindex="-1">Mapbox</a>',
     id: 'mapbox.streets'
   }).addTo(newMap);
+  let selectLeaf = document.getElementsByClassName('leaflet-control-attribution');
+  if(selectLeaf.length > 0){
+    let linkElement = selectLeaf[0].firstChild;
+    if(typeof linkElement != 'undefined')
+      linkElement.tabIndex = -1;
+  }
 
   updateRestaurants();
 }
@@ -157,14 +163,18 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.tabIndex = 1;
+  li.setAttribute("role","element");
+  li.setAttribute("aria-label", restaurant.name + " . Located on " + restaurant.neighborhood);
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = 'Image of the restaurant';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
   const name = document.createElement('h1');
-  name.innerHTML = restaurant.name;
+  name.innerHTML = restaurant.name; 
   li.append(name);
 
   const neighborhood = document.createElement('p');
@@ -178,7 +188,8 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  more.tabIndex = 1;
+  more.setAttribute("aria-label", "Select for more details");
+  more.tabIndex = 1,
   li.append(more)
 
   return li
