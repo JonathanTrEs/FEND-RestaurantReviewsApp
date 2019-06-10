@@ -194,7 +194,7 @@ p#restaurant-cuisine:focus,
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #ffffff;
   font-family: Arial,sans-serif;
   font-size: 14pt;
