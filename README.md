@@ -1,4 +1,4 @@
-# Restaurant Reviews Pproject
+# Restaurant Reviews Project
 
 ## Table of Contents
 
