@@ -252,7 +252,7 @@ p#restaurant-cuisine:focus,
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 47.4%;
+   width: calc(50% - 50px);
 }
 #restaurant-name {
   color: #f18200;
@@ -386,7 +386,7 @@ p#restaurant-cuisine:focus,
   .inside #footer {
     bottom: 0;
     position: absolute;
-    width: 100%;
+    width: -webkit-fill-available;
   }
   .inside #map-container {
     height: 700px;
@@ -398,6 +398,6 @@ p#restaurant-cuisine:focus,
     width: 100%;
   }
   .inside #breadcrumb {
-    width: 100%;
+    width: unset;
   }
 }
