@@ -4,6 +4,7 @@ var urlsToCache = [
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
+  '/css/styles.css',
   '/data/restaurants.json',
   '/img/favicon.png'
 ];
