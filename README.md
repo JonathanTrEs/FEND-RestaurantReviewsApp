@@ -1,4 +1,4 @@
-# Restaurant Reviews Pproject
+# Restaurant Reviews Project
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ The starter code can be found in [GitHub | Udacity](https://github.com/udacity/m
 
 - _Leaflet.js_ and _Mapbox_: This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/).
 - Favicon form [_Iconfinder_](https://www.iconfinder.com/icons/379338/dome_food_icon)
-- Service worker have been implemented following the guide fom [_Google developer_](https://developers.google.com/web/fundamentals/primers/service-workers/)
+- Service worker have been implemented following the guide from [_Google developer_](https://developers.google.com/web/fundamentals/primers/service-workers/)
 - Creation of border Radius [_Border radius_](https://border-radius.com/)
 - Creation of shadows [_Cssmatic_](https://www.cssmatic.com/box-shadow)
 
